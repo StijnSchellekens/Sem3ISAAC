@@ -18,6 +18,8 @@ module.exports = {
     'react',
   ],
   'rules': {
+    'require-jsdoc': 0,
+    'linebreak-style': ['error', 'windows'],
   },
-  'require-jsdoc': 0,
+
 };
