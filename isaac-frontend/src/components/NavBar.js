@@ -3,18 +3,13 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
-// import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-// import ListItem from '@mui/material/ListItem';
-// import ListItemIcon from '@mui/material/ListItemIcon';
-// import ListItemText from '@mui/material/ListItemText';
 import SpeedIcon from '@mui/icons-material/Speed';
 import ThermostatIcon from '@mui/icons-material/Thermostat';
-// import NotificationsIcon from '@mui/icons-material/Notifications';
-// import SettingsInputCompositeIcon from
-//   '@mui/icons-material/SettingsInputComposite';
-// import SettingsIcon from '@mui/icons-material/Settings';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import SettingsInputCompositeIcon from
+  '@mui/icons-material/SettingsInputComposite';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 import {Tab, Tabs} from '@material-ui/core/';
 
@@ -28,14 +23,6 @@ import {
 const drawerWidth = 240;
 
 export default function PermanentDrawerLeft() {
-  // const icons = (index) => {
-  //   if (index === 0) return <SpeedIcon />;
-  //   if (index === 1) return <ThermostatIcon />;
-  //   if (index === 2) return <NotificationsIcon />;
-  //   if (index === 3) return <SettingsInputCompositeIcon />;
-  //   if (index === 4) return <SettingsIcon />;
-  // };
-
   return (
     <Box sx={{display: 'flex'}}>
       <CssBaseline />
@@ -53,17 +40,6 @@ export default function PermanentDrawerLeft() {
       >
         <Toolbar />
         <Divider />
-        {/* <Tab
-          label='Dashboard'
-          value="/dashboard"
-          component={Link}
-          to="/dashboard"
-        />
-        <Tab
-          label='HeatMap'
-          value="/heatmap"
-          component={Link}
-          to="/heatmap"/> */}
         <Route
           path='/'
           render={(history) => (
@@ -87,21 +63,30 @@ export default function PermanentDrawerLeft() {
                 to="/heatmap"
                 icon={<ThermostatIcon/>}
               />
+              <Tab
+                label='Notifications'
+                value="/notifications"
+                component={Link}
+                to="/notifications"
+                icon={<NotificationsIcon/>}
+              />
+              <Tab
+                label='Advanced'
+                value="/advanced"
+                component={Link}
+                to="/advanced"
+                icon={<SettingsInputCompositeIcon />}
+              />
+              <Tab
+                label='Settings'
+                value="/settings"
+                component={Link}
+                to="/settings"
+                icon={<SettingsIcon/>}
+              />
             </Tabs>
           )}>
         </Route>
-        {/* <List>
-          {['Dashboard', 'HeatMap', 'Notificatons',
-            'Advanced', 'Settings'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {icons(index)}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
-
         <Divider />
       </Drawer>
       <Box
@@ -109,13 +94,6 @@ export default function PermanentDrawerLeft() {
         sx={{flexGrow: 1, bgcolor: 'background.default', p: 3}}
       >
         <Toolbar />
-        <Typography paragraph>
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
       </Box>
     </Box>
   );
