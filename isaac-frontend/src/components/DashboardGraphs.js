@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import LineGraph from './LineGraph';
-// import {startOfWeek, endOfWeek} from 'date-fns';
+import {startOfWeek, endOfWeek} from 'date-fns';
 
 function DashboardGraphs() {
   //  fetching data from json-server
@@ -41,18 +41,18 @@ function DashboardGraphs() {
       },
     ],
   };
-  // function test() {
-  //   const firstDay = startOfWeek(new Date(), {weekStartsOn: 1});
-  //   const lastDay = endOfWeek(new Date(), {weekStartsOn: 1});
-  //   console.log(firstDay, lastDay);
-  // }
+  function test() {
+    const firstDay = startOfWeek(new Date(), {weekStartsOn: 1});
+    const lastDay = endOfWeek(new Date(), {weekStartsOn: 1});
+    console.log(firstDay, lastDay);
+  }
   return (
     <div>
       <LineGraph
         data={graphData}
         height={300}
         title='Temperature'/>
-      {/* {test()} */}
+      {test()}
     </div>
   );
 }
