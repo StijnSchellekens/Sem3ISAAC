@@ -4,6 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Gauge from '../components/Gauge';
 import Grid from '@mui/material/Grid';
+import DashboardGraphs from '../components/DashboardGraphs';
 
 const drawerWidth = 240;
 
@@ -36,6 +37,9 @@ const Dashboard = () => {
         </Grid>
         <Grid item xs={6}>
           <Gauge name="Humidity"/>
+        </Grid>
+        <Grid item xs={12}>
+          <DashboardGraphs/>
         </Grid>
       </Grid>
     </div>
