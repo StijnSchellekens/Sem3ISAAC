@@ -1,18 +1,26 @@
-import React from 'react';
+import React, {useRef, forwardRef, useImperativeHandle} from 'react';
 import PropTypes from 'prop-types';
 import {Line} from 'react-chartjs-2';
-const Graph = ({data, height, title}) => {
+
+const Graph = forwardRef((props, ref) => {
+  const graphRef = useRef(null);
+  useImperativeHandle(ref, () => ({
+    updateGraph() {
+      graphRef.current.update();
+    },
+  }));
   return (
     <div>
       <Line
-        height={height}
-        data={data}
+        height={props.height}
+        data={props.data}
+        ref={graphRef}
         options= {{
           maintainAspectRatio: false,
           plugins: {
             title: {
               display: true,
-              text: title,
+              text: props.title,
             },
           },
           elements: {
@@ -25,7 +33,7 @@ const Graph = ({data, height, title}) => {
     </div>
 
   );
-};
+});
 
 Graph.propTypes = {
   data: PropTypes.object.isRequired,
@@ -36,6 +44,6 @@ Graph.propTypes = {
 Graph.propTypes = {
   title: PropTypes.string.isRequired,
 };
-
+Graph.displayName = 'Graph';
 export default Graph;
 

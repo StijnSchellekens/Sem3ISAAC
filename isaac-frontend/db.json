@@ -102,53 +102,160 @@
 
     {
       "id" : 17,
-      "temp": 23.0,
+      "temp": 24,
       "humidity": 45,
-      "dateTime" : "September 20, 2021 08:00:00"
+      "dateTime" : "September 29, 2021 08:00:00"
     },
     {
       "id" : 18,
-      "temp": 23.1,
+      "temp": 24.7,
       "humidity": 45,
-      "dateTime" : "September 20, 2021 08:10:00"
+      "dateTime" : "September 29, 2021 08:10:00"
     },
     {
       "id" : 19,
-      "temp": 25.9,
+      "temp": 24.8,
       "humidity": 45,
-      "dateTime" : "September 20, 2021 08:20:00"
+      "dateTime" : "September 29, 2021 08:20:00"
     },
     {
       "id" : 20,
-      "temp": 26,
+      "temp": 25,
       "humidity": 48,
-      "dateTime" : "September 20, 2021 08:30:00"
+      "dateTime" : "September 29, 2021 08:30:00"
     },
     {
       "id" : 21,
-      "temp": 26.2,
+      "temp": 26,
       "humidity": 45,
-      "dateTime" : "September 20, 2021 08:40:00"
+      "dateTime" : "September 29, 2021 08:40:00"
     },
     {
       "id" : 22,
-      "temp": 26.1,
+      "temp": 28.1,
       "humidity": 50,
-      "dateTime" : "September 20, 2021 08:50:00"
+      "dateTime" : "September 29, 2021 08:50:00"
     },
     {
       "id" : 23,
-      "temp": 26.5,
+      "temp": 28,
       "humidity": 49,
-      "dateTime" : "September 20, 2021 09:00:00"
+      "dateTime" : "September 29, 2021 09:00:00"
     },
     {
       "id" : 24,
-      "temp": 27,
+      "temp": 28.5,
       "humidity": 43,
-      "dateTime" : "September 20, 2021 09:10:00"
+      "dateTime" : "September 29, 2021 09:10:00"
     },
-    
+    {
+      "id" : 41,
+      "temp": 28.6,
+      "humidity": 43,
+      "dateTime" : "September 29, 2021 09:20:00"
+    },
+    {
+      "id" : 42,
+      "temp": 29,
+      "humidity": 43,
+      "dateTime" : "September 29, 2021 09:30:00"
+    },
+    {
+      "id" : 43,
+      "temp": 30,
+      "humidity": 43,
+      "dateTime" : "September 29, 2021 09:40:00"
+    },
+    {
+      "id" : 44,
+      "temp": 24,
+      "humidity": 45,
+      "dateTime" : "September 30, 2021 08:00:00"
+    },
+    {
+      "id" : 45,
+      "temp": 24.7,
+      "humidity": 45,
+      "dateTime" : "September 30, 2021 08:10:00"
+    },
+    {
+      "id" : 46,
+      "temp": 24.8,
+      "humidity": 45,
+      "dateTime" : "September 30, 2021 08:20:00"
+    },
+    {
+      "id" : 47,
+      "temp": 25,
+      "humidity": 43,
+      "dateTime" : "October 1, 2021 09:40:00"
+    },
+    {
+      "id" : 48,
+      "temp": 25.5,
+      "humidity": 45,
+      "dateTime" : "October 1, 2021 08:00:00"
+    },
+    {
+      "id" : 49,
+      "temp": 25.7,
+      "humidity": 45,
+      "dateTime" : "October 1, 2021 08:10:00"
+    },
+    {
+      "id" : 50,
+      "temp": 26,
+      "humidity": 45,
+      "dateTime" : "October 1, 2021 08:20:00"
+    },
+    {
+      "id" : 51,
+      "temp": 25,
+      "humidity": 43,
+      "dateTime" : "October 1, 2021 09:40:00"
+    },
+    {
+      "id" : 52,
+      "temp": 25.5,
+      "humidity": 45,
+      "dateTime" : "October 2, 2021 08:00:00"
+    },
+    {
+      "id" : 53,
+      "temp": 25.7,
+      "humidity": 45,
+      "dateTime" : "October 2, 2021 08:10:00"
+    },
+    {
+      "id" : 54,
+      "temp": 26,
+      "humidity": 45,
+      "dateTime" : "October 2, 2021 08:20:00"
+    },
+    {
+      "id" : 55,
+      "temp": 25,
+      "humidity": 43,
+      "dateTime" : "October 3, 2021 09:40:00"
+    },
+    {
+      "id" : 56,
+      "temp": 25.5,
+      "humidity": 45,
+      "dateTime" : "October 3, 2021 08:00:00"
+    },
+    {
+      "id" : 57,
+      "temp": 25.7,
+      "humidity": 45,
+      "dateTime" : "October 3, 2021 08:10:00"
+    },
+    {
+      "id" : 58,
+      "temp": 22.6,
+      "humidity": 45,
+      "dateTime" : "October 3, 2021 08:20:00"
+    },
 
 
     {
@@ -247,6 +354,118 @@
       "temp": 26.3,
       "humidity": 40,
       "dateTime" : "October 5, 2021 09:10:00"
+    },
+
+    {
+      "id" : 59,
+      "temp": 25.2,
+      "humidity": 53,
+      "dateTime" : "October 6, 2021 08:40:00"
+    },
+    {
+      "id" : 60,
+      "temp": 25.6,
+      "humidity": 52,
+      "dateTime" : "October 6, 2021 08:50:00"
+    },
+    {
+      "id" : 61,
+      "temp": 26,
+      "humidity": 43,
+      "dateTime" : "October 6, 2021 09:00:00"
+    },
+    {
+      "id" : 62,
+      "temp": 26.3,
+      "humidity": 40,
+      "dateTime" : "October 6, 2021 09:10:00"
+    },
+
+    {
+      "id" : 63,
+      "temp": 25,
+      "humidity": 53,
+      "dateTime" : "October 7, 2021 08:40:00"
+    },
+    {
+      "id" : 64,
+      "temp": 25.1,
+      "humidity": 52,
+      "dateTime" : "October 7, 2021 08:50:00"
+    },
+    {
+      "id" : 65,
+      "temp": 25.3,
+      "humidity": 43,
+      "dateTime" : "October 7, 2021 09:00:00"
+    },
+
+    {
+      "id" : 66,
+      "temp": 25.4,
+      "humidity": 40,
+      "dateTime" : "October 8, 2021 09:10:00"
+    },
+    {
+      "id" : 67,
+      "temp": 25.1,
+      "humidity": 52,
+      "dateTime" : "October 8, 2021 08:50:00"
+    },
+    {
+      "id" : 68,
+      "temp": 26,
+      "humidity": 43,
+      "dateTime" : "October 8, 2021 09:00:00"
+    },
+    {
+      "id" : 69,
+      "temp": 25.4,
+      "humidity": 40,
+      "dateTime" : "October 8, 2021 09:10:00"
+    },
+
+    {
+      "id" : 70,
+      "temp": 26,
+      "humidity": 52,
+      "dateTime" : "October 9, 2021 08:50:00"
+    },
+    {
+      "id" : 71,
+      "temp": 26.3,
+      "humidity": 43,
+      "dateTime" : "October 9, 2021 09:00:00"
+    },
+    {
+      "id" : 72,
+      "temp": 26.2,
+      "humidity": 40,
+      "dateTime" : "October 9, 2021 09:10:00"
+    },
+    {
+      "id" : 73,
+      "temp": 26.6,
+      "humidity": 40,
+      "dateTime" : "October 10, 2021 09:10:00"
+    },
+    {
+      "id" : 74,
+      "temp": 26.5,
+      "humidity": 43,
+      "dateTime" : "October 10, 2021 09:00:00"
+    },
+    {
+      "id" : 75,
+      "temp": 26.8,
+      "humidity": 40,
+      "dateTime" : "October 10, 2021 09:10:00"
+    },
+    {
+      "id" : 76,
+      "temp": 27,
+      "humidity": 40,
+      "dateTime" : "October 10, 2021 09:10:00"
     }
 
   ]
