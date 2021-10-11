@@ -5,7 +5,6 @@ import {
   Measurement, nextMeasurement,
 } from '../components/helper/MeasurementEnum';
 
-// const ref = useRef();
 const DashboardGraphs = () => {
   const [data, setData] = useState([]);
   const [measurement, setMeasurement,
