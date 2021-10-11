@@ -1,25 +1,17 @@
 import LineGraph from './LineGraph';
-import React, {useState, useEffect, useRef} from 'react';
+import PropTypes from 'prop-types';
+import React, {useState, useRef} from 'react';
 import {startOfWeek, endOfWeek} from 'date-fns';
 import {
   Measurement, nextMeasurement,
 } from '../components/helper/MeasurementEnum';
 
-const DashboardGraphs = () => {
-  const [data, setData] = useState([]);
+// const ref = useRef();
+const DashboardGraphs = ({data}) => {
   const [measurement, setMeasurement,
   ] = useState(Measurement.TEMPERATURE);
 
   //  fetching data from json-server to be moved from file
-  useEffect( async () => {
-    const res = await fetch('http://localhost:5000/entries');
-    const rawData = await res.json();
-
-    setData(await rawData.map((obj) => {
-      obj.dateTime = new Date(obj.dateTime);
-      return obj;
-    }));
-  }, []);
 
   const graphChildRef = useRef(null);
 
@@ -123,6 +115,10 @@ const DashboardGraphs = () => {
       />
     </div>
   );
+};
+
+DashboardGraphs.propTypes = {
+  data: PropTypes.array.isRequired,
 };
 
 export default DashboardGraphs;
