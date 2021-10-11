@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -9,7 +9,23 @@ import DashboardGraphs from '../components/DashboardGraphs';
 const drawerWidth = 240;
 
 const Dashboard = () => {
-  // const [temp, setTemp] = useState(0);
+  const [data, setData] = useState(null);
+  useEffect( async () => {
+    const res = await fetch('http://localhost:5000/entries');
+    const rawData = await res.json();
+
+    setData(await rawData.map((obj) => {
+      obj.dateTime = new Date(obj.dateTime);
+      return obj;
+    }));
+  }, []);
+
+  if (!data) {
+    return (
+      <div>...Loading</div>
+    );
+  }
+
   const generalStyle = {
     marginLeft: `${drawerWidth}px`,
   };
@@ -31,15 +47,15 @@ const Dashboard = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Grid container spacing={1} justifyContent="center">
-        <Grid item xs={6}>
-          <Gauge name="Temperature"/>
+      <Grid container spacing={1}>
+        <Grid item xs={12} lg={6}>
+          <Gauge id="graph-chart-temperature" name="Temperature" data={data}/>
         </Grid>
-        <Grid item xs={6}>
-          <Gauge name="Humidity"/>
+        <Grid item xs={12} lg={6}>
+          <Gauge id="graph-chart-humidity" name="Humidity" data={data}/>
         </Grid>
         <Grid item xs={12}>
-          <DashboardGraphs/>
+          <DashboardGraphs data={data}/>
         </Grid>
       </Grid>
     </div>
