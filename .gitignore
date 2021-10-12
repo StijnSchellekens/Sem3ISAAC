@@ -1,7 +1,5 @@
 # dependencies
-/isaac-frontend/node_modules
 /isaac-frontend/.next
-
 /isaac-frontend/node_modules
 /isaac-frontend/.pnp
 /isaac-frontend/.pnp.js
