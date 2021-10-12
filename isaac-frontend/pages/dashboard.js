@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Gauge from '../components/Gauge';
 import Grid from '@mui/material/Grid';
 import DashboardGraphs from '../components/DashboardGraphs';
+import NavBar from '../components/NavBar';
 
 const drawerWidth = 240;
 
@@ -36,6 +37,7 @@ const Dashboard = () => {
 
   return (
     <div style={generalStyle}>
+      <NavBar value={0}/>
       <AppBar
         position="fixed"
         color="primary"

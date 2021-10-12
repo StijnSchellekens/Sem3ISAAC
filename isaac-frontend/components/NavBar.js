@@ -10,13 +10,14 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsInputCompositeIcon from
   '@mui/icons-material/SettingsInputComposite';
 import SettingsIcon from '@mui/icons-material/Settings';
+import PropTypes from 'prop-types';
 
 import {Tab, Tabs} from '@material-ui/core/';
 import Link from 'next/link';
 
 const drawerWidth = 240;
 
-export default function PermanentDrawerLeft() {
+export default function PermanentDrawerLeft({value}) {
   return (
     <Box sx={{display: 'flex'}}>
       <CssBaseline />
@@ -37,25 +38,55 @@ export default function PermanentDrawerLeft() {
         <>
           <Tabs
             orientation="vertical"
-            value={'/'}
+            value={value}
             textColor="secondary"
             indicatorColor="secondary"
           >
-            <Tab
+            {/* <Tab
               label='Dashboard'
               value="/"
               // component={<Link/>}
               to="/"
               icon={<SpeedIcon/>}
-            />
-            <Tab
+            /> */}
+            <Link href="/dashboard" passHref>
+              <Tab label="Dashboard"
+                value={0}
+                icon={<SpeedIcon/>}
+              />
+            </Link>
+            <Link href="/heatmap" passHref>
+              <Tab label="Heatmap"
+                value={1}
+                icon={<ThermostatIcon/>}
+              />
+            </Link>
+            <Link href="/notifications" passHref>
+              <Tab label="Notifications"
+                value={2}
+                icon={<NotificationsIcon/>}
+              />
+            </Link>
+            <Link href="/advanced" passHref>
+              <Tab label="Advanced"
+                value={3}
+                icon={<SettingsInputCompositeIcon />}
+              />
+            </Link>
+            <Link href="/settings" passHref>
+              <Tab label="Settings"
+                value={4}
+                icon={<SettingsIcon/>}
+              />
+            </Link>
+            {/* <Tab
               label='HeatMap'
               // value="/heatmap"
-              component={Link}
+              // component={Link}
               // href="/heatmap"
               icon={<ThermostatIcon/>}
-            />
-            <Tab
+            /> */}
+            {/* <Tab
               label='Notifications'
               value="/notifications"
               // component={Link}
@@ -68,14 +99,17 @@ export default function PermanentDrawerLeft() {
               // component={Link}
               to="/advanced"
               icon={<SettingsInputCompositeIcon />}
-            />
-            <Tab
+            /> */}
+            {/* <Tab
               label='Settings'
               value="/settings"
               // component={Link}
               to="/settings"
               icon={<SettingsIcon/>}
-            />
+            /> */}
+            {/* <Link href="/heatmap" passHref>
+              <Tab label="Heatmap" />
+            </Link> */}
           </Tabs>
         </>
         <Divider />
@@ -89,3 +123,7 @@ export default function PermanentDrawerLeft() {
     </Box>
   );
 }
+
+PermanentDrawerLeft.propTypes = {
+  value: PropTypes.number.isRequired,
+};

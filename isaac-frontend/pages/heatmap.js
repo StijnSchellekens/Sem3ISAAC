@@ -3,10 +3,12 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 const drawerWidth = 240;
+import NavBar from '../components/NavBar';
 
 const Heatmap = () => {
   return (
     <div>
+      <NavBar value={1}/>
       <AppBar
         position="fixed"
         sx={{width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`}}
