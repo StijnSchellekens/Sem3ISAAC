@@ -4,15 +4,15 @@ import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import Divider from '@mui/material/Divider';
-// import SpeedIcon from '@mui/icons-material/Speed';
-// import ThermostatIcon from '@mui/icons-material/Thermostat';
-// import NotificationsIcon from '@mui/icons-material/Notifications';
-// import SettingsInputCompositeIcon from
-//   '@mui/icons-material/SettingsInputComposite';
-// import SettingsIcon from '@mui/icons-material/Settings';
+import SpeedIcon from '@mui/icons-material/Speed';
+import ThermostatIcon from '@mui/icons-material/Thermostat';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import SettingsInputCompositeIcon from
+  '@mui/icons-material/SettingsInputComposite';
+import SettingsIcon from '@mui/icons-material/Settings';
 
-// import {Tab, Tabs} from '@material-ui/core/';
-
+import {Tab, Tabs} from '@material-ui/core/';
+import Link from 'next/link';
 
 const drawerWidth = 240;
 
@@ -34,53 +34,50 @@ export default function PermanentDrawerLeft() {
       >
         <Toolbar />
         <Divider />
-        {/* <Route
-          path='/'
-          render={(history) => (
-            <Tabs
-              orientation="vertical"
-              value={history.location.pathname}
-              textColor="secondary"
-              indicatorColor="secondary"
-            >
-              <Tab
-                label='Dashboard'
-                value="/"
-                component={Link}
-                to="/"
-                icon={<SpeedIcon/>}
-              />
-              <Tab
-                label='HeatMap'
-                value="/heatmap"
-                component={Link}
-                to="/heatmap"
-                icon={<ThermostatIcon/>}
-              />
-              <Tab
-                label='Notifications'
-                value="/notifications"
-                component={Link}
-                to="/notifications"
-                icon={<NotificationsIcon/>}
-              />
-              <Tab
-                label='Advanced'
-                value="/advanced"
-                component={Link}
-                to="/advanced"
-                icon={<SettingsInputCompositeIcon />}
-              />
-              <Tab
-                label='Settings'
-                value="/settings"
-                component={Link}
-                to="/settings"
-                icon={<SettingsIcon/>}
-              />
-            </Tabs>
-          )}>
-        </Route> */}
+        <>
+          <Tabs
+            orientation="vertical"
+            value={'/'}
+            textColor="secondary"
+            indicatorColor="secondary"
+          >
+            <Tab
+              label='Dashboard'
+              value="/"
+              // component={<Link/>}
+              to="/"
+              icon={<SpeedIcon/>}
+            />
+            <Tab
+              label='HeatMap'
+              // value="/heatmap"
+              component={Link}
+              // href="/heatmap"
+              icon={<ThermostatIcon/>}
+            />
+            <Tab
+              label='Notifications'
+              value="/notifications"
+              // component={Link}
+              to="/notifications"
+              icon={<NotificationsIcon/>}
+            />
+            <Tab
+              label='Advanced'
+              value="/advanced"
+              // component={Link}
+              to="/advanced"
+              icon={<SettingsInputCompositeIcon />}
+            />
+            <Tab
+              label='Settings'
+              value="/settings"
+              // component={Link}
+              to="/settings"
+              icon={<SettingsIcon/>}
+            />
+          </Tabs>
+        </>
         <Divider />
       </Drawer>
       <Box
