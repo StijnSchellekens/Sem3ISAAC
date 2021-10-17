@@ -19,19 +19,19 @@ const DashboardGraphs = ({data}) => {
     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
       'Friday', 'Saturday', 'Sunday'],
     datasets: [
-      {
-        fill: true,
-        label: 'This week',
-        // filter to return an array with temps of current week
-        data: getMeasurementArray(new Date()),
-        backgroundColor: [
-          'rgba(13, 99, 132, 0.3)',
-        ],
-        borderColor: [
-          'rgba(13, 99, 132, 1)',
-        ],
-        borderWidth: 2,
-      },
+      // {
+      //   fill: false,
+      //   label: 'This week',
+      //   // filter to return an array with temps of current week
+      //   data: getMeasurementArray(new Date()),
+      //   backgroundColor: [
+      //     'rgba(13, 99, 132, 0.3)',
+      //   ],
+      //   borderColor: [
+      //     'rgba(13, 99, 132, 1)',
+      //   ],
+      //   borderWidth: 2,
+      // },
       {
         fill: false,
         label: 'Last week',
@@ -43,6 +43,30 @@ const DashboardGraphs = ({data}) => {
           'rgba(146, 35, 168, 1)',
         ],
         borderWidth: 2,
+      },
+      {
+        label: 'Last week top',
+        type: 'line',
+        backgroundColor: 'rgba(146, 35, 168, 0.3)',
+        borderColor: 'transparent',
+        pointRadius: 0,
+        fill: 0,
+        tension: 0,
+        data: [25, 25.1, 26, 26.6, 26, 27, 27],
+        yAxisID: 'y',
+        xAxisID: 'x',
+      },
+      {
+        label: 'Last week bottom',
+        type: 'line',
+        backgroundColor: 'rgba(146, 35, 168, 0.3)',
+        borderColor: 'transparent',
+        pointRadius: 0,
+        fill: 0,
+        tension: 0,
+        data: [23, 21, 24, 24.7, 25, 23, 25],
+        yAxisID: 'y',
+        xAxisID: 'x',
       },
     ],
   };
