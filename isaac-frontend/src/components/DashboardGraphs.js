@@ -9,44 +9,128 @@ import Button from '@mui/material/Button';
 
 // const ref = useRef();
 const DashboardGraphs = ({data}) => {
-  const [measurement, setMeasurement,
-  ] = useState(Measurement.TEMPERATURE);
-
-  //  fetching data from json-server to be moved from file
+  const [measurement, setMeasurement] = useState(Measurement.TEMPERATURE);
 
   const graphChildRef = useRef(null);
 
-  const graphData = {
-    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
-      'Friday', 'Saturday', 'Sunday'],
-    datasets: [
-      {
-        fill: true,
-        label: 'This week',
-        // filter to return an array with temps of current week
-        data: getMeasurementArray(new Date()),
-        backgroundColor: [
-          'rgba(13, 99, 132, 0.3)',
-        ],
-        borderColor: [
-          'rgba(13, 99, 132, 1)',
-        ],
-        borderWidth: 2,
-      },
-      {
-        fill: false,
-        label: 'Last week',
-        data: getMeasurementArray(getLastWeekDate()),
-        backgroundColor: [
-          'rgba(146, 35, 168, 0.3)',
-        ],
-        borderColor: [
-          'rgba(146, 35, 168, 1)',
-        ],
-        borderWidth: 2,
-      },
-    ],
-  };
+  // const graphData = {
+  //   labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
+  //     'Friday', 'Saturday', 'Sunday'],
+  //   datasets: [
+  //     // {
+  //     //   fill: false,
+  //     //   label: 'This week',
+  //     //   // filter to return an array with temps of current week
+  //     //   data: getMeasurementArray(new Date()),
+  //     //   backgroundColor: [
+  //     //     'rgba(13, 99, 132, 0.3)',
+  //     //   ],
+  //     //   borderColor: [
+  //     //     'rgba(13, 99, 132, 1)',
+  //     //   ],
+  //     //   borderWidth: 2,
+  //     // },
+  //     {
+  //       fill: false,
+  //       label: 'Last week',
+  //       data: getMeasurementArray(getLastWeekDate()),
+  //       backgroundColor: [
+  //         'rgba(146, 35, 168, 0.3)',
+  //       ],
+  //       borderColor: [
+  //         'rgba(146, 35, 168, 1)',
+  //       ],
+  //       borderWidth: 2,
+  //     },
+  //     {
+  //       label: 'Last week top',
+  //       type: 'line',
+  //       backgroundColor: 'rgba(146, 35, 168, 0.3)',
+  //       borderColor: 'transparent',
+  //       pointRadius: 0,
+  //       fill: 0,
+  //       tension: 0,
+  //       data: [25, 25.1, 26, 26.6, 26, 27, 27],
+  //       yAxisID: 'y',
+  //       xAxisID: 'x',
+  //     },
+  //     {
+  //       label: 'Last week bottom',
+  //       type: 'line',
+  //       backgroundColor: 'rgba(146, 35, 168, 0.3)',
+  //       borderColor: 'transparent',
+  //       pointRadius: 0,
+  //       fill: 0,
+  //       tension: 0,
+  //       data: [23, 21, 24, 24.7, 25, 23, 25],
+  //       yAxisID: 'y',
+  //       xAxisID: 'x',
+  //     },
+  //   ],
+  // };
+
+
+  let graphData = null;
+  setGraphData();
+  function setGraphData() {
+    const lastWeekMeasurements = getMeasurementArray(getLastWeekDate());
+    // const thisWeekMeasurements = getMeasurementArray(new Date());
+    graphData = {
+      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
+        'Friday', 'Saturday', 'Sunday'],
+      datasets: [
+        // {
+        //   fill: true,
+        //   label: 'This week',
+        //   // filter to return an array with temps of current week
+        //   data: thisWeekMeasurements.map((obj) => obj.average),
+        //   backgroundColor: [
+        //     'rgba(13, 99, 132, 0.3)',
+        //   ],
+        //   borderColor: [
+        //     'rgba(13, 99, 132, 1)',
+        //   ],
+        //   borderWidth: 2,
+        // },
+        {
+          fill: false,
+          label: 'Last week',
+          data: lastWeekMeasurements.map((obj) => obj.average),
+          backgroundColor: [
+            'rgba(146, 35, 168, 0.3)',
+          ],
+          borderColor: [
+            'rgba(146, 35, 168, 1)',
+          ],
+          borderWidth: 2,
+        },
+        {
+          label: 'Maximum',
+          type: 'line',
+          backgroundColor: 'rgba(146, 35, 168, 0.3)',
+          borderColor: 'transparent',
+          pointRadius: 3,
+          fill: 0,
+          tension: 0,
+          data: lastWeekMeasurements.map((obj) => obj.maximum),
+          yAxisID: 'y',
+          xAxisID: 'x',
+        },
+        {
+          label: 'Minimum',
+          type: 'line',
+          backgroundColor: 'rgba(146, 35, 168, 0.3)',
+          borderColor: 'transparent',
+          pointRadius: 3,
+          fill: 0,
+          tension: 0,
+          data: lastWeekMeasurements.map((obj) => obj.minimum),
+          yAxisID: 'y',
+          xAxisID: 'x',
+        },
+      ],
+    };
+  }
 
   function getLastWeekDate() {
     const date = new Date();
@@ -70,30 +154,56 @@ const DashboardGraphs = ({data}) => {
       }
       return --day;
     };
-    // sum the temps for a day and create counter
-    const average = [0, 0, 0, 0, 0, 0, 0];
+
+    // create array that stores mininmum value, maximum and the average
+    const entries = [];
+    for (let index = 0; index < 7; index++) {
+      entries[index] = {
+        minimum: Number.MAX_SAFE_INTEGER,
+        maximum: 0,
+        average: 0,
+      };
+    }
     const counter = [0, 0, 0, 0, 0, 0, 0];
 
     if (measurement === Measurement.TEMPERATURE) {
       currentWeekEntries.forEach((element) => {
-        const arrayIndex = getDayExtended(element.dateTime);
-        average[arrayIndex] += element.temp;
-        counter[arrayIndex]++;
+        if (element != 0) {
+          const arrayIndex = getDayExtended(element.dateTime);
+          entries[arrayIndex].average += element.temp;
+          counter[arrayIndex]++;
+
+          if (element.temp > entries[arrayIndex].maximum) {
+            entries[arrayIndex].maximum = element.temp;
+          }
+          if (element.temp < entries[arrayIndex].minimum) {
+            entries[arrayIndex].minimum = element.temp;
+          }
+        }
       });
     } else if (measurement === Measurement.HUMIDITY) {
       currentWeekEntries.forEach((element) => {
-        const arrayIndex = getDayExtended(element.dateTime);
-        average[arrayIndex] += element.humidity;
-        counter[arrayIndex]++;
+        if (element != 0) {
+          const arrayIndex = getDayExtended(element.dateTime);
+          entries[arrayIndex].average += element.humidity;
+          counter[arrayIndex]++;
+
+          if (element.humidity > entries[arrayIndex].maximum) {
+            entries[arrayIndex].maximum = element.humidity;
+          }
+          if (element.humidity < entries[arrayIndex].minimum) {
+            entries[arrayIndex].minimum = element.humidity;
+          }
+        }
       });
     }
 
     // calculate average
-    for (let index = 0; index < average.length; index++) {
-      average[index] /= counter[index];
-      average[index] = average[index].toPrecision(3);
+    for (let index = 0; index < 7; index++) {
+      entries[index].average /= counter[index];
+      entries[index].average = entries[index].average.toPrecision(3);
     }
-    return average;
+    return entries.filter((obj) => obj.maximum !== 0);
   }
 
   function updateDatasets() {
