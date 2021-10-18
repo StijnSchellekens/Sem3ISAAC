@@ -9,8 +9,8 @@ const Gauge = ({name, data}) => {
   const [value, setValue] = useState(null);
 
   const chartStyle = {
-    height: 240,
-    width: 540,
+    height: 400,
+    width: 500,
   };
 
   useEffect(async () => {
@@ -40,9 +40,11 @@ const Gauge = ({name, data}) => {
   }
 
   const paperStyle = {
-    height: 300,
-    width: 500,
+    height: 200,
+    width: 'auto',
     textAlign: 'center',
+    paddingBottom: '250px',
+    margin: 'auto',
   };
 
   return (
@@ -55,13 +57,14 @@ const Gauge = ({name, data}) => {
       <GaugeChart
         style={chartStyle}
         id="gauge-chart"
-        colors={['#009DDC', '#c12d3f']}
+        colors={['#009DDC', '#57C61A', '#c12d3f']}
         arcWidth={0.2}
         textColor="#464A4F"
         needleColor="black"
         needleBaseColor="black"
-        percent={value}
-        arcsLength={[0.3, 0.5, 0.2]}
+        percent={0.27}
+        arcsLength={[0.15, 0.2, 0.27]}
+        arcPadding={0.01}
         formatTextValue={(val) => val+getFormatText()}
       />
 

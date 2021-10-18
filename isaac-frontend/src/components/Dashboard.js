@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Gauge from '../components/Gauge';
 import Grid from '@mui/material/Grid';
 import DashboardGraphs from '../components/DashboardGraphs';
+import Box from '@material-ui/core/Box';
 
 const drawerWidth = 240;
 
@@ -28,10 +29,16 @@ const Dashboard = () => {
 
   const generalStyle = {
     marginLeft: `${drawerWidth}px`,
+    marginRight: `auto`,
   };
 
   const dashBoardStyle = {
     width: `calc(100% - ${drawerWidth}px)`,
+  };
+
+  const content = {
+    marginLeft: `10%`,
+    marginRight: `10%`,
   };
 
   // const halfPieChart = {
@@ -52,19 +59,21 @@ const Dashboard = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Grid container
-        spacing={1}
-      >
-        <Grid item xs={12} lg={6}>
-          <Gauge id="graph-chart-temperature" name="Temperature" data={data}/>
+      <Box style={content}>
+        <Grid container
+          spacing={2}
+        >
+          <Grid item xs={12} lg={6}>
+            <Gauge id="graph-chart-temperature" name="Temperature" data={data}/>
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <Gauge id="graph-chart-humidity" name="Humidity" data={data}/>
+          </Grid>
+          <Grid item xs={12}>
+            <DashboardGraphs data={data}/>
+          </Grid>
         </Grid>
-        <Grid item xs={12} lg={6}>
-          <Gauge id="graph-chart-humidity" name="Humidity" data={data}/>
-        </Grid>
-        <Grid item xs={12}>
-          <DashboardGraphs data={data}/>
-        </Grid>
-      </Grid>
+      </Box>
     </div>
   );
 };
