@@ -5,6 +5,7 @@ import {startOfWeek, endOfWeek} from 'date-fns';
 import {
   Measurement, nextMeasurement,
 } from '../components/helper/MeasurementEnum';
+import Button from '@mui/material/Button';
 
 // const ref = useRef();
 const DashboardGraphs = ({data}) => {
@@ -102,11 +103,10 @@ const DashboardGraphs = ({data}) => {
 
   return (
     <div>
-      <input
-        type="button"
-        value="Switch"
-        onClick={() => updateDatasets()}
-      />
+      <Button variant="contained"
+        color="primary"
+        onClick={() => updateDatasets()}>Switch
+      </Button>
       <LineGraph
         data={graphData}
         height={300}

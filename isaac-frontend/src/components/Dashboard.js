@@ -34,6 +34,11 @@ const Dashboard = () => {
     width: `calc(100% - ${drawerWidth}px)`,
   };
 
+  // const halfPieChart = {
+  //   marginLeft: 'auto',
+  //   marginRigh: 'auto',
+  // };
+
   return (
     <div style={generalStyle}>
       <AppBar
@@ -47,7 +52,9 @@ const Dashboard = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Grid container spacing={1}>
+      <Grid container
+        spacing={1}
+      >
         <Grid item xs={12} lg={6}>
           <Gauge id="graph-chart-temperature" name="Temperature" data={data}/>
         </Grid>
