@@ -41,9 +41,16 @@ const Dashboard = () => {
     marginRight: `10%`,
   };
 
-  // const halfPieChart = {
-  //   marginLeft: 'auto',
-  //   marginRigh: 'auto',
+  // const arcCenterRenderer = (value, color) => {
+  //   return (
+  //     <h3
+  //       style={{
+  //         color: color,
+  //       }}
+  //     >
+  //       {value}%
+  //     </h3>
+  //   );
   // };
 
   return (
