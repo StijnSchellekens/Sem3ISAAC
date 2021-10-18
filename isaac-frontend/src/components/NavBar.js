@@ -19,10 +19,21 @@ import {
   Link,
 } from 'react-router-dom';
 
+import logo from '../images/isaac-primary-logo-rgb-500px.png';
 
 const drawerWidth = 240;
 
 export default function PermanentDrawerLeft() {
+  const styles = {
+    toolbarContainer: {
+      backgroundImage: `url(${logo})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+      height: 100,
+    },
+  };
+
   return (
     <Box sx={{display: 'flex'}}>
       <CssBaseline />
@@ -38,7 +49,7 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar />
+        <Toolbar style={styles.toolbarContainer}/>
         <Divider />
         <Route
           path='/'
