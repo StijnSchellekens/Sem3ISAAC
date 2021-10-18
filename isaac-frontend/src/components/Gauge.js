@@ -18,19 +18,32 @@ const Gauge = ({name, data}) => {
       data = data.map((obj) =>
         obj.temp,
       );
+      const average = await data.reduce((total, next) => total +
+      next, 0) / data.length;
+      setValue((average - 15) * 6.67 / 100);
     } else {
       data = data.map((obj) =>
         obj.humidity,
       );
-    }
-    const average = await data.reduce((total, next) => total +
+
+      const average = await data.reduce((total, next) => total +
     next, 0) / data.length;
-    setValue(average / 100);
+      setValue(average /100);
+    }
   }, []);
 
-  const getFormatText = () => {
-    if (name === 'Temperature') return '°C';
-    return '%';
+  const getFormatText = (val) => {
+    if (name === 'Temperature') {
+      return Math.round((val/6.67+14))+'°C';
+    }
+    return Math.round(val)+'%';
+  };
+
+  const getFormatArcLength = () => {
+    if (name === 'Temperature') {
+      return [0.375, 0.375, 0.25];
+    }
+    return [0.4, 0.2, 0.4];
   };
 
   if (!value) {
@@ -62,10 +75,10 @@ const Gauge = ({name, data}) => {
         textColor="#464A4F"
         needleColor="black"
         needleBaseColor="black"
-        percent={0.27}
-        arcsLength={[0.15, 0.2, 0.27]}
+        percent={value}
+        arcsLength={getFormatArcLength()}
         arcPadding={0.01}
-        formatTextValue={(val) => val+getFormatText()}
+        formatTextValue={(val) => getFormatText(val)}
       />
 
     </Paper>

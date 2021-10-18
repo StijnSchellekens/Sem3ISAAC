@@ -6,6 +6,8 @@ import {
   Measurement, nextMeasurement,
 } from '../components/helper/MeasurementEnum';
 import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+
 
 // const ref = useRef();
 const DashboardGraphs = ({data}) => {
@@ -68,6 +70,14 @@ const DashboardGraphs = ({data}) => {
   //     },
   //   ],
   // };
+
+  const paperStyle = {
+    height: 'auto',
+    width: 'auto',
+    textAlign: 'center',
+    paddingBottom: '250px',
+    margin: 'auto',
+  };
 
 
   let graphData = null;
@@ -213,16 +223,18 @@ const DashboardGraphs = ({data}) => {
 
   return (
     <div>
-      <Button variant="contained"
-        color="primary"
-        onClick={() => updateDatasets()}>Switch
-      </Button>
-      <LineGraph
-        data={graphData}
-        height={300}
-        title={measurement}
-        ref={graphChildRef}
-      />
+      <Paper sx={paperStyle}>
+        <Button variant="contained"
+          color="primary"
+          onClick={() => updateDatasets()}>Switch
+        </Button>
+        <LineGraph
+          data={graphData}
+          height={300}
+          title={measurement}
+          ref={graphChildRef}
+        />
+      </Paper>
     </div>
   );
 };
