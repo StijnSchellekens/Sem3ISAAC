@@ -13,7 +13,14 @@ const theme = createTheme({
     secondary: {
       main: '#661212',
     },
-    fontFamily: 'Open Sans',
+  },
+  typography: {
+    primary: {
+      fontFamily: 'Open Sans',
+    },
+    secondary: {
+      fontFamily: 'Arial',
+    },
   },
 });
 

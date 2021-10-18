@@ -8,7 +8,6 @@ import {
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 
-
 // const ref = useRef();
 const DashboardGraphs = ({data}) => {
   const [measurement, setMeasurement] = useState(Measurement.TEMPERATURE);
@@ -72,7 +71,7 @@ const DashboardGraphs = ({data}) => {
   // };
 
   const paperStyle = {
-    height: 'auto',
+    height: 340,
     width: 'auto',
     textAlign: 'center',
     paddingBottom: '250px',
@@ -220,13 +219,21 @@ const DashboardGraphs = ({data}) => {
     setMeasurement(nextMeasurement(measurement));
     graphChildRef.current.updateGraph();
   }
+  const btnStyle = {
+    fontFamily: 'Open Sans',
+    textTransform: 'none',
+    marginTop: 10,
+    // justify: 'space-between',
+  };
 
   return (
     <div>
       <Paper sx={paperStyle}>
-        <Button variant="contained"
-          color="primary"
-          onClick={() => updateDatasets()}>Switch
+        <Button
+          variant="contained"
+          color='primary'
+          onClick={() => updateDatasets()}
+          style={btnStyle}>Switch
         </Button>
         <LineGraph
           data={graphData}

@@ -13,7 +13,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 import {Tab, Tabs} from '@material-ui/core/';
 
-
 import {
   Route,
   Link,
@@ -61,35 +60,36 @@ export default function PermanentDrawerLeft() {
               indicatorColor="secondary"
             >
               <Tab
-                label='Dashboard'
+                label={<div style={{fontFamily: 'Open Sans'}}>Dashboard</div>}
                 value="/"
                 component={Link}
                 to="/"
                 icon={<SpeedIcon/>}
               />
               <Tab
-                label='HeatMap'
+                label={<div style={{fontFamily: 'Open Sans'}}>Heatmap</div>}
                 value="/heatmap"
                 component={Link}
                 to="/heatmap"
                 icon={<ThermostatIcon/>}
               />
               <Tab
-                label='Notifications'
+                label={<div style={{fontFamily: 'Open Sans'}}>
+                  Notifications</div>}
                 value="/notifications"
                 component={Link}
                 to="/notifications"
                 icon={<NotificationsIcon/>}
               />
               <Tab
-                label='Advanced'
+                label={<div style={{fontFamily: 'Open Sans'}}>Advanced</div>}
                 value="/advanced"
                 component={Link}
                 to="/advanced"
                 icon={<SettingsInputCompositeIcon />}
               />
               <Tab
-                label='Settings'
+                label={<div style={{fontFamily: 'Open Sans'}}>Settings</div>}
                 value="/settings"
                 component={Link}
                 to="/settings"
