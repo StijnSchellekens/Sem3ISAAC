@@ -167,28 +167,32 @@ const DashboardGraphs = ({data}) => {
 
     if (measurement === Measurement.TEMPERATURE) {
       currentWeekEntries.forEach((element) => {
-        const arrayIndex = getDayExtended(element.dateTime);
-        entries[arrayIndex].average += element.temp;
-        counter[arrayIndex]++;
+        if (element != 0) {
+          const arrayIndex = getDayExtended(element.dateTime);
+          entries[arrayIndex].average += element.temp;
+          counter[arrayIndex]++;
 
-        if (element.temp > entries[arrayIndex].maximum) {
-          entries[arrayIndex].maximum = element.temp;
-        }
-        if (element.temp < entries[arrayIndex].minimum) {
-          entries[arrayIndex].minimum = element.temp;
+          if (element.temp > entries[arrayIndex].maximum) {
+            entries[arrayIndex].maximum = element.temp;
+          }
+          if (element.temp < entries[arrayIndex].minimum) {
+            entries[arrayIndex].minimum = element.temp;
+          }
         }
       });
     } else if (measurement === Measurement.HUMIDITY) {
       currentWeekEntries.forEach((element) => {
-        const arrayIndex = getDayExtended(element.dateTime);
-        entries[arrayIndex].average += element.humidity;
-        counter[arrayIndex]++;
+        if (element != 0) {
+          const arrayIndex = getDayExtended(element.dateTime);
+          entries[arrayIndex].average += element.humidity;
+          counter[arrayIndex]++;
 
-        if (element.humidity > entries[arrayIndex].maximum) {
-          entries[arrayIndex].maximum = element.humidity;
-        }
-        if (element.humidity < entries[arrayIndex].minimum) {
-          entries[arrayIndex].minimum = element.humidity;
+          if (element.humidity > entries[arrayIndex].maximum) {
+            entries[arrayIndex].maximum = element.humidity;
+          }
+          if (element.humidity < entries[arrayIndex].minimum) {
+            entries[arrayIndex].minimum = element.humidity;
+          }
         }
       });
     }
@@ -198,7 +202,7 @@ const DashboardGraphs = ({data}) => {
       entries[index].average /= counter[index];
       entries[index].average = entries[index].average.toPrecision(3);
     }
-    return entries;
+    return entries.filter((obj) => obj.maximum !== 0);
   }
 
   function updateDatasets() {
