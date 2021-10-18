@@ -82,8 +82,8 @@ const DashboardGraphs = ({data}) => {
   let graphData = null;
   setGraphData();
   function setGraphData() {
-    const lastWeekMeasurements = getMeasurementArray(getLastWeekDate());
-    // const thisWeekMeasurements = getMeasurementArray(new Date());
+    // const lastWeekMeasurements = getMeasurementArray(getLastWeekDate());
+    const thisWeekMeasurements = getMeasurementArray(new Date());
     graphData = {
       labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
         'Friday', 'Saturday', 'Sunday'],
@@ -103,37 +103,37 @@ const DashboardGraphs = ({data}) => {
         // },
         {
           fill: false,
-          label: 'Last week',
-          data: lastWeekMeasurements.map((obj) => obj.average),
+          label: 'This week',
+          data: thisWeekMeasurements.map((obj) => obj.average),
           backgroundColor: [
-            'rgba(146, 35, 168, 0.3)',
+            'rgba(13, 99, 132, 0.3)',
           ],
           borderColor: [
-            'rgba(146, 35, 168, 1)',
+            'rgba(13, 99, 132, 1)',
           ],
           borderWidth: 2,
         },
         {
           label: 'Maximum',
           type: 'line',
-          backgroundColor: 'rgba(146, 35, 168, 0.3)',
+          backgroundColor: 'rgba(13, 99, 132, 0.3)',
           borderColor: 'transparent',
           pointRadius: 3,
           fill: 0,
           tension: 0,
-          data: lastWeekMeasurements.map((obj) => obj.maximum),
+          data: thisWeekMeasurements.map((obj) => obj.maximum),
           yAxisID: 'y',
           xAxisID: 'x',
         },
         {
           label: 'Minimum',
           type: 'line',
-          backgroundColor: 'rgba(146, 35, 168, 0.3)',
+          backgroundColor: 'rgba(13, 99, 132, 0.3)',
           borderColor: 'transparent',
           pointRadius: 3,
           fill: 0,
           tension: 0,
-          data: lastWeekMeasurements.map((obj) => obj.minimum),
+          data: thisWeekMeasurements.map((obj) => obj.minimum),
           yAxisID: 'y',
           xAxisID: 'x',
         },
@@ -141,11 +141,11 @@ const DashboardGraphs = ({data}) => {
     };
   }
 
-  function getLastWeekDate() {
-    const date = new Date();
-    date.setDate(date.getDate()-7);
-    return date;
-  };
+  // function getLastWeekDate() {
+  //   const date = new Date();
+  //   date.setDate(date.getDate()-7);
+  //   return date;
+  // };
 
   function getMeasurementArray(date) {
     const firstDay = startOfWeek(date, {weekStartsOn: 1});
@@ -223,7 +223,6 @@ const DashboardGraphs = ({data}) => {
     fontFamily: 'Open Sans',
     textTransform: 'none',
     marginTop: 10,
-    // justify: 'space-between',
   };
 
   return (
