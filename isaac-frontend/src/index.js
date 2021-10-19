@@ -11,12 +11,15 @@ const theme = createTheme({
       main: '#009DDC',
     },
     secondary: {
-      main: '#661212',
+      main: '#004F6E',
     },
-    typography: {
-      fontFamily: [
-        'Open Sans',
-      ].join(','),
+  },
+  typography: {
+    primary: {
+      fontFamily: 'Open Sans',
+    },
+    secondary: {
+      fontFamily: 'Arial',
     },
   },
 });

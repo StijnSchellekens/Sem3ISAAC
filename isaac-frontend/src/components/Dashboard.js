@@ -6,6 +6,7 @@ import Gauge from '../components/Gauge';
 import Grid from '@mui/material/Grid';
 import DashboardGraphs from '../components/DashboardGraphs';
 import Box from '@material-ui/core/Box';
+import {createTheme} from '@material-ui/core/styles';
 
 const drawerWidth = 240;
 
@@ -34,12 +35,18 @@ const Dashboard = () => {
 
   const dashBoardStyle = {
     width: `calc(100% - ${drawerWidth}px)`,
+    height: 100,
   };
 
   const content = {
     marginLeft: `10%`,
     marginRight: `10%`,
   };
+  const fontTheme = createTheme({
+    typography: {
+      fontFamily: 'Rockwell',
+    },
+  });
 
   // const arcCenterRenderer = (value, color) => {
   //   return (
@@ -57,11 +64,11 @@ const Dashboard = () => {
     <div style={generalStyle}>
       <AppBar
         position="fixed"
-        color="primary"
+        color='primary'
         style={dashBoardStyle}
       >
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
+        <Toolbar sx={{paddingTop: '2%'}}>
+          <Typography variant="h4" noWrap component="div" theme={fontTheme}>
             Dashboard
           </Typography>
         </Toolbar>

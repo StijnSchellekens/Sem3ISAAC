@@ -21,6 +21,18 @@ const Graph = forwardRef((props, ref) => {
             title: {
               display: true,
               text: props.title,
+              font: {
+                family: 'Open Sans',
+                size: 18,
+              },
+            },
+            legend: {
+              labels: {
+                font: {
+                  family: 'Open Sans',
+                  size: 14,
+                },
+              },
             },
           },
           elements: {
