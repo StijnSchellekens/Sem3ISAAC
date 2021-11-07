@@ -6,14 +6,23 @@ import Gauge from '../components/Gauge';
 import Grid from '@mui/material/Grid';
 import DashboardGraphs from '../components/DashboardGraphs';
 import Box from '@material-ui/core/Box';
-
+import {serverFetch} from '../utils/server-fetch';
 const drawerWidth = 240;
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
   useEffect( async () => {
-    const res = await fetch('http://localhost:5000/entries');
-    const rawData = await res.json();
+    const rawData = await serverFetch();
+
+    // check why this is not displayed at some point
+    if (rawData instanceof Error) {
+      return (
+        <div>
+          <h1>Error</h1>
+          <p>Oopsie</p>
+        </div>
+      );
+    }
 
     setData(await rawData.map((obj) => {
       obj.dateTime = new Date(obj.dateTime);
