@@ -11,7 +11,6 @@ const Gauge = ({name, data}) => {
   const chartStyle = {
     height: 400,
     width: 500,
-    fontFamily: 'Open Sans',
   };
 
   useEffect(async () => {
@@ -65,8 +64,7 @@ const Gauge = ({name, data}) => {
     <Paper
       sx={paperStyle}
     >
-      <Typography variant="h4" noWrap component="div"
-        sx={{fontFamily: 'Open Sans'}}>
+      <Typography variant="h6" noWrap component="div">
         {name}
       </Typography>
       <GaugeChart
@@ -74,9 +72,9 @@ const Gauge = ({name, data}) => {
         id="gauge-chart"
         colors={['#009DDC', '#57C61A', '#c12d3f']}
         arcWidth={0.2}
-        textColor="#black"
-        needleColor="#464A4F"
-        needleBaseColor="#464A4F"
+        textColor="#464A4F"
+        needleColor="black"
+        needleBaseColor="black"
         percent={value}
         arcsLength={getFormatArcLength()}
         arcPadding={0.01}

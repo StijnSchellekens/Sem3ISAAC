@@ -13,26 +13,16 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 import {Tab, Tabs} from '@material-ui/core/';
 
+
 import {
   Route,
   Link,
 } from 'react-router-dom';
 
-import logo from '../images/isaac-primary-logo-rgb-500px.png';
 
 const drawerWidth = 240;
 
 export default function PermanentDrawerLeft() {
-  const styles = {
-    toolbarContainer: {
-      backgroundImage: `url(${logo})`,
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center center',
-      height: 100,
-    },
-  };
-
   return (
     <Box sx={{display: 'flex'}}>
       <CssBaseline />
@@ -48,7 +38,7 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar style={styles.toolbarContainer}/>
+        <Toolbar />
         <Divider />
         <Route
           path='/'
@@ -60,36 +50,35 @@ export default function PermanentDrawerLeft() {
               indicatorColor="secondary"
             >
               <Tab
-                label={<div style={{fontFamily: 'Open Sans'}}>Dashboard</div>}
+                label='Dashboard'
                 value="/"
                 component={Link}
                 to="/"
                 icon={<SpeedIcon/>}
               />
               <Tab
-                label={<div style={{fontFamily: 'Open Sans'}}>Heatmap</div>}
+                label='HeatMap'
                 value="/heatmap"
                 component={Link}
                 to="/heatmap"
                 icon={<ThermostatIcon/>}
               />
               <Tab
-                label={<div style={{fontFamily: 'Open Sans'}}>
-                  Notifications</div>}
+                label='Notifications'
                 value="/notifications"
                 component={Link}
                 to="/notifications"
                 icon={<NotificationsIcon/>}
               />
               <Tab
-                label={<div style={{fontFamily: 'Open Sans'}}>Advanced</div>}
+                label='Advanced'
                 value="/advanced"
                 component={Link}
                 to="/advanced"
                 icon={<SettingsInputCompositeIcon />}
               />
               <Tab
-                label={<div style={{fontFamily: 'Open Sans'}}>Settings</div>}
+                label='Settings'
                 value="/settings"
                 component={Link}
                 to="/settings"
