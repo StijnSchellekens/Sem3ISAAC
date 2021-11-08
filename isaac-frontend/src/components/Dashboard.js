@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -9,26 +9,17 @@ import Box from '@material-ui/core/Box';
 import {serverFetch} from '../utils/server-fetch';
 const drawerWidth = 240;
 
-const Dashboard = () => {
-  const [data, setData] = useState(null);
-  useEffect( async () => {
-    const rawData = await serverFetch();
+const Dashboard = ({data}) => {
+  // const [data, setData] = useState(null);
+  // useEffect( async () => {
+  //   const res = await fetch('http://localshost:5000/entries');
+  //   const rawData = await res.json();
 
-    // check why this is not displayed at some point
-    if (rawData instanceof Error) {
-      return (
-        <div>
-          <h1>Error</h1>
-          <p>Oopsie</p>
-        </div>
-      );
-    }
-
-    setData(await rawData.map((obj) => {
-      obj.dateTime = new Date(obj.dateTime);
-      return obj;
-    }));
-  }, []);
+  //   setData(await rawData.map((obj) => {
+  //     obj.dateTime = new Date(obj.dateTime);
+  //     return obj;
+  //   }));
+  // }, []);
 
   if (!data) {
     return (

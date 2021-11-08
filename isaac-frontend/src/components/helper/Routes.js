@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 
 import Dashboard from '../Dashboard';
@@ -7,16 +7,27 @@ import Notifications from '../Notifications';
 import Advanced from '../Advanced';
 import Settings from '../Settings';
 
+
 import {
   Switch,
   Route,
 } from 'react-router-dom';
 
 const Routes = () => {
+  const [data, setData] = useState(null);
+  useEffect( async () => {
+    const rawData = await (await fetch('http://localhost:5000/entries')).json();
+
+    setData(await rawData.map((obj) => {
+      obj.dateTime = new Date(obj.dateTime);
+      return obj;
+    }));
+  }, []);
+
   return (
     <Switch>
       <Route path="/heatmap">
-        <Heatmap />
+        <Heatmap data={data}/>
       </Route>
       <Route path='/notifications'>
         <Notifications />
@@ -28,7 +39,7 @@ const Routes = () => {
         <Settings />
       </Route>
       <Route path="/">
-        <Dashboard />
+        <Dashboard data={data}/>
       </Route>
     </Switch>
   );
