@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -10,17 +10,17 @@ import {createTheme} from '@material-ui/core/styles';
 
 const drawerWidth = 240;
 
-const Dashboard = () => {
-  const [data, setData] = useState(null);
-  useEffect( async () => {
-    const res = await fetch('http://localhost:5000/entries');
-    const rawData = await res.json();
+const Dashboard = ({data}) => {
+  // const [data, setData] = useState(null);
+  // useEffect( async () => {
+  //   const res = await fetch('http://localhost:5000/entries');
+  //   const rawData = await res.json();
 
-    setData(await rawData.map((obj) => {
-      obj.dateTime = new Date(obj.dateTime);
-      return obj;
-    }));
-  }, []);
+  //   setData(await rawData.map((obj) => {
+  //     obj.dateTime = new Date(obj.dateTime);
+  //     return obj;
+  //   }));
+  // }, []);
 
   if (!data) {
     return (
