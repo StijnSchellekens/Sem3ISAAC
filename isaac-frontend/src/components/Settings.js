@@ -5,21 +5,21 @@ import Typography from '@mui/material/Typography';
 const drawerWidth = 240;
 
 const Settings = () => {
-  return (
-    <div>
-      <AppBar
-        position="fixed"
-        sx={{width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`}}
-        color="primary"
-      >
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
+	return (
+		<div>
+			<AppBar
+				position="fixed"
+				sx={{width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`}}
+				color="primary"
+			>
+				<Toolbar>
+					<Typography variant="h6" noWrap component="div">
             Settings
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+					</Typography>
+				</Toolbar>
+			</AppBar>
+		</div>
+	);
 };
 
 export default Settings;
