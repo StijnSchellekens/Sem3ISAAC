@@ -12,7 +12,6 @@ import SettingsInputCompositeIcon from
 import SettingsIcon from '@mui/icons-material/Settings';
 
 import {Tab, Tabs} from '@material-ui/core/';
-
 import {
   Route,
   Link,
@@ -22,6 +21,8 @@ import logo from '../images/isaac-primary-logo-rgb-500px.png';
 
 const drawerWidth = 240;
 
+
+// app bar
 export default function PermanentDrawerLeft() {
   const styles = {
     toolbarContainer: {
