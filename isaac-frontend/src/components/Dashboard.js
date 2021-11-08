@@ -6,83 +6,90 @@ import Gauge from '../components/Gauge';
 import Grid from '@mui/material/Grid';
 import DashboardGraphs from '../components/DashboardGraphs';
 import Box from '@material-ui/core/Box';
-import {serverFetch} from '../utils/server-fetch';
+import {createTheme} from '@material-ui/core/styles';
+
 const drawerWidth = 240;
 
 const Dashboard = ({data}) => {
-	// const [data, setData] = useState(null);
-	// useEffect( async () => {
-	//   const res = await fetch('http://localshost:5000/entries');
-	//   const rawData = await res.json();
+  // const [data, setData] = useState(null);
+  // useEffect( async () => {
+  //   const res = await fetch('http://localhost:5000/entries');
+  //   const rawData = await res.json();
 
-	//   setData(await rawData.map((obj) => {
-	//     obj.dateTime = new Date(obj.dateTime);
-	//     return obj;
-	//   }));
-	// }, []);
+  //   setData(await rawData.map((obj) => {
+  //     obj.dateTime = new Date(obj.dateTime);
+  //     return obj;
+  //   }));
+  // }, []);
 
-	if (!data) {
-		return (
-			<div>...Loading</div>
-		);
-	}
+  if (!data) {
+    return (
+      <div>...Loading</div>
+    );
+  }
 
-	const generalStyle = {
-		marginLeft: `${drawerWidth}px`,
-		marginRight: 'auto',
-	};
+  const generalStyle = {
+    marginLeft: `${drawerWidth}px`,
+    marginRight: `auto`,
+  };
 
-	const dashBoardStyle = {
-		width: `calc(100% - ${drawerWidth}px)`,
-	};
+  const dashBoardStyle = {
+    width: `calc(100% - ${drawerWidth}px)`,
+    height: 100,
+  };
 
-	const content = {
-		marginLeft: '10%',
-		marginRight: '10%',
-	};
+  const content = {
+    marginLeft: `10%`,
+    marginRight: `10%`,
+  };
+  const fontTheme = createTheme({
+    typography: {
+      fontFamily: 'Rockwell',
+    },
+  });
 
-	// const arcCenterRenderer = (value, color) => {
-	//   return (
-	//     <h3
-	//       style={{
-	//         color: color,
-	//       }}
-	//     >
-	//       {value}%
-	//     </h3>
-	//   );
-	// };
+  // const arcCenterRenderer = (value, color) => {
+  //   return (
+  //     <h3
+  //       style={{
+  //         color: color,
+  //       }}
+  //     >
+  //       {value}%
+  //     </h3>
+  //   );
+  // };
 
-	return (
-		<div style={generalStyle}>
-			<AppBar
-				position="fixed"
-				color="primary"
-				style={dashBoardStyle}
-			>
-				<Toolbar>
-					<Typography variant="h6" noWrap component="div">
+  return (
+    <div style={generalStyle}>
+      <AppBar
+        position="fixed"
+        color='primary'
+        style={dashBoardStyle}
+      >
+        <Toolbar sx={{paddingTop: '2%'}}>
+          <Typography variant="h4" noWrap component="div" theme={fontTheme}>
             Dashboard
-					</Typography>
-				</Toolbar>
-			</AppBar>
-			<Box style={content}>
-				<Grid container
-					spacing={2}
-				>
-					<Grid item xs={12} lg={6}>
-						<Gauge id="graph-chart-temperature" name="Temperature" data={data}/>
-					</Grid>
-					<Grid item xs={12} lg={6}>
-						<Gauge id="graph-chart-humidity" name="Humidity" data={data}/>
-					</Grid>
-					<Grid item xs={12}>
-						<DashboardGraphs data={data}/>
-					</Grid>
-				</Grid>
-			</Box>
-		</div>
-	);
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box style={content}>
+        <Grid container
+          spacing={2}
+        >
+          <Grid item xs={12} lg={6}>
+            <Gauge id="graph-chart-temperature" name="Temperature" data={data}/>
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <Gauge id="graph-chart-humidity" name="Humidity" data={data}/>
+          </Grid>
+          <Grid item xs={12}>
+            <DashboardGraphs data={data}/>
+          </Grid>
+        </Grid>
+      </Box>
+    </div>
+  );
 };
 
 export default Dashboard;

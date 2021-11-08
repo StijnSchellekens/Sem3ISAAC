@@ -1,3 +1,22 @@
+@media only screen and (max-width: 1080px) {
+  .heatmap-container{
+    margin-left: 240px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 1081px) {
+  .heatmap-container{
+    margin-left: 240px;
+  }
+  .image{
+    /* margin-left: 240px;  */
+    width: 1280px;
+    height: 560px; 
+  }
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,9 +30,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.image{
+/* .heatmap-canvas{
+  width: 100%;
+  height: 100%;
+} */
+/* .heatmap-container{
   margin-left: 240px;
-  width: 1280px;
-  height: 560px;
-}
+  width: 100%;
+  height: 100%;
+}  */

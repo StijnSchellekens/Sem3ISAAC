@@ -6,28 +6,31 @@ import {BrowserRouter} from 'react-router-dom';
 import {createTheme, ThemeProvider} from '@material-ui/core';
 
 const theme = createTheme({
-	palette: {
-		primary: {
-			main: '#009DDC',
-		},
-		secondary: {
-			main: '#661212',
-		},
-		typography: {
-			fontFamily: [
-				'Open Sans',
-			].join(','),
-		},
-	},
+  palette: {
+    primary: {
+      main: '#009DDC',
+    },
+    secondary: {
+      main: '#004F6E',
+    },
+  },
+  typography: {
+    primary: {
+      fontFamily: 'Open Sans',
+    },
+    secondary: {
+      fontFamily: 'Arial',
+    },
+  },
 });
 
 ReactDOM.render(
-	<React.StrictMode>
-		<ThemeProvider theme={theme}>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</ThemeProvider>
-	</React.StrictMode>,
-	document.getElementById('root'),
+    <React.StrictMode>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
+    </React.StrictMode>,
+    document.getElementById('root'),
 );
