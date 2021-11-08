@@ -65,6 +65,7 @@ const Heatmap = ({data}) => {
 			<AppBar
 				position="fixed"
 				sx={{width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`}}
+				color='primary'
 				style={heatmapStyle}
 			>
 				<Toolbar sx={{paddingTop: '2%'}}>

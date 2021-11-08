@@ -30,12 +30,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-/* .heatmap-canvas{
+
+
+.floor3Grid{
+  /* width: 1280px;
+  height: 560px; */
+  z-index: 9;
+}
+
+.gridboardGrid{
   width: 100%;
   height: 100%;
-} */
-/* .heatmap-container{
-  margin-left: 240px;
-  width: 100%;
-  height: 100%;
-}  */
+  position: absolute;
+  opacity: 0.7;
+}
+
+.gridContainer{
+  width: 1280px;
+  height: 560px;
+  position: relative;
+}
+
+
+.cellNoWallStyle {
+  background-color: undefined;
+  /* border: solid 2px purple; */
+  width: 40px;
+  height: 40px;
+}
+
+.sensorGrid {
+  background-color: lightcoral;
+  /* border: solid 2px purple; */
+  width: 40px;
+  height: 40px;
+}
