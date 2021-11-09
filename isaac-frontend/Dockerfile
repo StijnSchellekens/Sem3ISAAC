@@ -1,15 +1,9 @@
 FROM node:14-alpine3.12
 
-RUN mkdir -p /app/src
-
-WORKDIR /app/src
-
-COPY package.json .
-
-RUN npm install
-
-COPY . .
-
+WORKDIR  /app
+COPY package.json ./
 EXPOSE 3000
+RUN npm install --legacy-peer-deps
+COPY ./ ./
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]

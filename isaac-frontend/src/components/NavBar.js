@@ -7,8 +7,7 @@ import Divider from '@mui/material/Divider';
 import SpeedIcon from '@mui/icons-material/Speed';
 import ThermostatIcon from '@mui/icons-material/Thermostat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import SettingsInputCompositeIcon from
-	'@mui/icons-material/SettingsInputComposite';
+import SettingsInputCompositeIcon from'@mui/icons-material/SettingsInputComposite';
 import SettingsIcon from '@mui/icons-material/Settings';
 
 import {Tab, Tabs} from '@material-ui/core/';
@@ -17,7 +16,7 @@ import {
 	Link,
 } from 'react-router-dom';
 
-import logo from '../../public/isaac-primary-logo-rgb-500px.png';
+import logo from '../images/isaac-primary-logo-rgb-500px.png';
 
 const drawerWidth = 240;
 
