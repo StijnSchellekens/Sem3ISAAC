@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {createTheme} from '@material-ui/core/styles';
-
+import HeatmapGrid from './HeatmapGrid';
 import h337 from 'heatmap.js';
 import iotCrop from '../images/iot-crop1.png';
 
@@ -34,11 +34,11 @@ const Heatmap = ({data}) => {
 			points.push(point);
 		}
 
-		console.log(points);
+		// console.log(points);
 
 		// heatmap data format
 		const dataHeatmap = {
-			max: 28, // to change
+			max: 27, // to change
 			data: points,
 		};
 
@@ -79,6 +79,9 @@ const Heatmap = ({data}) => {
 					<img src={iotCrop} className="image"/>
 				</div>
 			</div>
+			{/* <HeatmapGrid/> */}
+			
+
 		</div>
 	);
 };

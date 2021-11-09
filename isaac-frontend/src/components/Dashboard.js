@@ -11,17 +11,6 @@ import {createTheme} from '@material-ui/core/styles';
 const drawerWidth = 240;
 
 const Dashboard = ({data}) => {
-	// const [data, setData] = useState(null);
-	// useEffect( async () => {
-	//   const res = await fetch('http://localhost:5000/entries');
-	//   const rawData = await res.json();
-
-	//   setData(await rawData.map((obj) => {
-	//     obj.dateTime = new Date(obj.dateTime);
-	//     return obj;
-	//   }));
-	// }, []);
-
 	if (!data) {
 		return (
 			<div>...Loading</div>

@@ -37,4 +37,14 @@
         "no-unused-vars": "off",
         "react/prop-types": 0
     }
+    // "overrides": [
+    //     {
+    //       "files": "*.test.js",
+    //       "globals": {
+    //         "shallow": true,
+    //         "render": true,
+    //         "mount": true,
+    //       },
+    //     },
+    //   ]
 }

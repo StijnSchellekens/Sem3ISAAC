@@ -17,7 +17,7 @@ import {
 	Link,
 } from 'react-router-dom';
 
-import logo from '../images/isaac-primary-logo-rgb-500px.png';
+import logo from '../../public/isaac-primary-logo-rgb-500px.png';
 
 const drawerWidth = 240;
 
