@@ -54,7 +54,23 @@
     "id": 2,
     "x": 3,
     "y": 8,
-    "temp": 25,
+    "temp":  21,
+    "humidity": 40,
+    "dateTime" : "November 02, 2021 17:00:00"
+  },
+  {
+    "id": 13213,
+    "x": 3.3,
+    "y": 8.3,
+    "temp":  27,
+    "humidity": 40,
+    "dateTime" : "November 02, 2021 17:00:00"
+  },
+  {
+    "id": 13213,
+    "x": 3,
+    "y": 9,
+    "temp":  22,
     "humidity": 40,
     "dateTime" : "November 02, 2021 17:00:00"
   },
@@ -70,6 +86,14 @@
     "id": 3,
     "x": 3,
     "y": 12,
+    "temp": 24.5,
+    "humidity": 45,
+    "dateTime" : "November 03, 2021 12:00:00"
+  },
+  {
+    "id": 3,
+    "x": 3.3,
+    "y": 12.3,
     "temp": 24.5,
     "humidity": 45,
     "dateTime" : "November 03, 2021 12:00:00"
