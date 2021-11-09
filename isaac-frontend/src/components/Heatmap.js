@@ -31,9 +31,17 @@ const Heatmap = ({data}) => {
 				y: element.y * 40 - 20,
 				value: element.temp,
 			};
-			points.push(point);
-		}
 
+			points.push(point);
+
+		}
+		var nuConfig = {
+			radius: 10,
+			maxOpacity: 1,
+			minOpacity: 0.5,
+			blur: .9,
+		};
+		heatmapInstance.configure(nuConfig);
 		console.log(points);
 
 		// heatmap data format
