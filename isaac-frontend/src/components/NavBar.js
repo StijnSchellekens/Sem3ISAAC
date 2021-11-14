@@ -61,9 +61,9 @@ export default function PermanentDrawerLeft() {
 						>
 							<Tab
 								label={<div style={{fontFamily: 'Open Sans'}}>Dashboard</div>}
-								value="/"
+								value="/dashboard"
 								component={Link}
-								to="/"
+								to="/dashboard"
 								icon={<SpeedIcon/>}
 							/>
 							<Tab
@@ -74,8 +74,7 @@ export default function PermanentDrawerLeft() {
 								icon={<ThermostatIcon/>}
 							/>
 							<Tab
-								label={<div style={{fontFamily: 'Open Sans'}}>
-                  Notifications</div>}
+								label={<div style={{fontFamily: 'Open Sans'}}>Notifications</div>}
 								value="/notifications"
 								component={Link}
 								to="/notifications"
