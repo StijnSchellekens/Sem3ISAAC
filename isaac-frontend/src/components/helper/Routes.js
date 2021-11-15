@@ -11,21 +11,27 @@ import {serverFetch} from '../../utils/server-fetch';
 import {
 	Switch,
 	Route,
+	Redirect
 } from 'react-router-dom';
-import Component404 from '../Component404';
 
 const Routes = () => {
 	const [data, setData] = useState(null);
 	useEffect( async () => {
-		const rawData = await serverFetch();
-
-		setData(await rawData.map((obj) => {
-			obj.dateTime = new Date(obj.dateTime);
-			return obj;
-		}));
+		try {
+			const rawData = await serverFetch();
+			console.log(await rawData);
+			setData(
+				await rawData.map((obj) => {
+					obj.dateTime = new Date(obj.dateTime);
+					return obj;
+				}));
+		}
+		catch (error) {
+			console.log(error);
+		}
 	}, []);
 
-	if (!data) return <div>Loading...</div>;
+	// if (!data) return <div>Loading...</div>;
 
 	return (
 		<Switch>
@@ -41,7 +47,7 @@ const Routes = () => {
 			<Route path='/settings'>
 				<Settings />
 			</Route>
-			<Route path="/">
+			<Route path='/'>
 				<Dashboard data={data}/>
 			</Route>
 		</Switch>
