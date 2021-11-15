@@ -12,6 +12,7 @@ import {
 	Switch,
 	Route,
 } from 'react-router-dom';
+import Component404 from '../Component404';
 
 const Routes = () => {
 	const [data, setData] = useState(null);
@@ -40,9 +41,10 @@ const Routes = () => {
 			<Route path='/settings'>
 				<Settings />
 			</Route>
-			<Route path="/">
+			<Route path="/dashboard">
 				<Dashboard data={data}/>
 			</Route>
+			<Route component={Component404} />
 		</Switch>
 	);
 };
