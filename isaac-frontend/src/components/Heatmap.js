@@ -58,7 +58,7 @@ const Heatmap = ({data}) => {
 
 	const heatmapStyle = {
 		width: `calc(100% - ${drawerWidth}px)`,
-		height: '1000',
+		height: 100,
 	};
 	const mainContentStyle = {
 		marginLeft: {drawerWidth},
