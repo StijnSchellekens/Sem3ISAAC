@@ -32,7 +32,35 @@ const Heatmap = ({data}) => {
 				value: element.temp,
 			};
 
+			const leftPoint = {
+				x: (element.x - 0.3) * 40 - 20,
+				y: element.y * 40 - 20,
+				value: element.temp,
+			};
+
+			const rightPoint = {
+				x: (element.x + 0.3) * 40 - 20,
+				y: element.y * 40 - 20,
+				value: element.temp,
+			};
+
+			const upPoint = {
+				x: element.x * 40 - 20,
+				y: (element.y + 0.3) * 40 - 20,
+				value: element.temp,
+			};
+
+			const downPoint = {
+				x: element.x * 40 - 20,
+				y: (element.y - 0.3) * 40 - 20,
+				value: element.temp,
+			};
+
 			points.push(point);
+			points.push(leftPoint);
+			// points.push(rightPoint);
+			// points.push(upPoint);
+			points.push(downPoint);
 
 		}
 		var nuConfig = {
