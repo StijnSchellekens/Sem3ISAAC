@@ -30,7 +30,7 @@
     "id": 1,
     "x": 4,
     "y": 3,
-    "temp": 25,
+    "temp": 24,
     "humidity": 40,
     "dateTime" : "November 01, 2021 17:00:00"
   },
@@ -60,14 +60,6 @@
   },
   {
     "id": 13213,
-    "x": 3.3,
-    "y": 8.3,
-    "temp":  27,
-    "humidity": 40,
-    "dateTime" : "November 02, 2021 17:00:00"
-  },
-  {
-    "id": 13213,
     "x": 3,
     "y": 9,
     "temp":  22,
@@ -86,14 +78,6 @@
     "id": 3,
     "x": 3,
     "y": 12,
-    "temp": 24.5,
-    "humidity": 45,
-    "dateTime" : "November 03, 2021 12:00:00"
-  },
-  {
-    "id": 3,
-    "x": 3.3,
-    "y": 12.3,
     "temp": 24.5,
     "humidity": 45,
     "dateTime" : "November 03, 2021 12:00:00"
@@ -190,7 +174,7 @@
     "id": 7,
     "x": 18,
     "y": 13,
-    "temp": 28,
+    "temp": 23,
     "humidity": 40,
     "dateTime" : "November 07, 2021 17:00:00"
   },
@@ -512,12 +496,6 @@
       "dateTime" : "October 23, 2021 08:30:00"
     },
     {
-      "id" : 13,
-      "temp": 23.3,
-      "humidity": 53,
-      "dateTime" : "October 23, 2021 08:40:00"
-    },
-    {
       "id" : 14,
       "temp": 23.6,
       "humidity": 52,
@@ -784,12 +762,6 @@
       "humidity": 43,
       "dateTime" : "October 5, 2021 09:00:00"
     },
-    {
-      "id" : 40,
-      "temp": 26.3,
-      "humidity": 40,
-      "dateTime" : "October 5, 2021 09:10:00"
-    },
 
     {
       "id" : 59,
@@ -809,12 +781,6 @@
       "humidity": 43,
       "dateTime" : "October 6, 2021 09:00:00"
     },
-    {
-      "id" : 62,
-      "temp": 26.3,
-      "humidity": 40,
-      "dateTime" : "October 6, 2021 09:10:00"
-    },
 
     {
       "id" : 63,
@@ -827,12 +793,6 @@
       "temp": 25.1,
       "humidity": 52,
       "dateTime" : "October 7, 2021 08:50:00"
-    },
-    {
-      "id" : 65,
-      "temp": 25.3,
-      "humidity": 43,
-      "dateTime" : "October 7, 2021 09:00:00"
     },
 
     {

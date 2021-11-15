@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 
 import Dashboard from '../Dashboard';
-import Heatmap from '../Heatmap';
+import HeatmapGrid from '../HeatmapGrid';
 import Notifications from '../Notifications';
 import Advanced from '../Advanced';
 import Settings from '../Settings';
@@ -30,7 +30,7 @@ const Routes = () => {
 	return (
 		<Switch>
 			<Route path="/heatmap">
-				<Heatmap data={data}/>
+				<HeatmapGrid data={data}/>
 			</Route>
 			<Route path='/notifications'>
 				<Notifications />
@@ -41,10 +41,9 @@ const Routes = () => {
 			<Route path='/settings'>
 				<Settings />
 			</Route>
-			<Route path="/dashboard">
+			<Route path="/">
 				<Dashboard data={data}/>
 			</Route>
-			<Route component={Component404} />
 		</Switch>
 	);
 };
