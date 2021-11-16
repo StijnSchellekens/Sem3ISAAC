@@ -166,7 +166,6 @@ const HeatmapGrid = ({data}) => {
 					{grid.map((rows, y) => rows.map((col, x) => <div
 						key={`${y}-${x}`}
 						style={getStyle(grid[y][x], x, y)}
-					// style={getColor(grid[y][x])}
 					></div>))}
 				</div>
 				<img src={iotSvg} className="floor3Grid"/>
