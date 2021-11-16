@@ -1,4 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {
+//	useState,
+	useEffect} from 'react';
 
 
 import Dashboard from '../Dashboard';
@@ -12,15 +14,13 @@ import {serverFetch} from '../../utils/server-fetch';
 import {
 	Switch,
 	Route,
-	Redirect
 } from 'react-router-dom';
 
 const Routes = () => {
-	const [data, setData] = useState(null);
+	const [data, setData] = React.useState(null);
 	useEffect( async () => {
 		try {
 			const rawData = await serverFetch();
-			console.log(await rawData);
 			setData(
 				await rawData.map((obj) => {
 					obj.dateTime = new Date(obj.dateTime);
